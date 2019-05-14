@@ -2512,6 +2512,7 @@ void __init boot_cpu_hotplug_init(void)
 	this_cpu_write(cpuhp_state.state, CPUHP_ONLINE);
 }
 
+<<<<<<< HEAD
 /*
  * These are used for a global "mitigations=" cmdline option for toggling
  * optional CPU mitigations.
@@ -2524,6 +2525,9 @@ enum cpu_mitigations {
 
 static enum cpu_mitigations cpu_mitigations __ro_after_init =
 	CPU_MITIGATIONS_AUTO;
+=======
+enum cpu_mitigations cpu_mitigations __ro_after_init = CPU_MITIGATIONS_AUTO;
+>>>>>>> c8c87353e (Merge 4.14.119 into android-4.14)
 
 static int __init mitigations_parse_cmdline(char *arg)
 {
@@ -2533,13 +2537,17 @@ static int __init mitigations_parse_cmdline(char *arg)
 		cpu_mitigations = CPU_MITIGATIONS_AUTO;
 	else if (!strcmp(arg, "auto,nosmt"))
 		cpu_mitigations = CPU_MITIGATIONS_AUTO_NOSMT;
+<<<<<<< HEAD
 	else
 		pr_crit("Unsupported mitigations=%s, system may still be vulnerable\n",
 			arg);
+=======
+>>>>>>> c8c87353e (Merge 4.14.119 into android-4.14)
 
 	return 0;
 }
 early_param("mitigations", mitigations_parse_cmdline);
+<<<<<<< HEAD
 
 /* mitigations=off */
 bool cpu_mitigations_off(void)
@@ -2554,3 +2562,5 @@ bool cpu_mitigations_auto_nosmt(void)
 	return cpu_mitigations == CPU_MITIGATIONS_AUTO_NOSMT;
 }
 EXPORT_SYMBOL_GPL(cpu_mitigations_auto_nosmt);
+=======
+>>>>>>> c8c87353e (Merge 4.14.119 into android-4.14)
