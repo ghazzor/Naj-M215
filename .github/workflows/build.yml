@@ -3,10 +3,10 @@ name: build
 on:
   push:
     branches:
-      Naz-Latest
+      Naz-Ups
   pull_request:
     branches:
-      Naz-Latest
+      Naz-Ups
   workflow_dispatch:
 
 jobs:
