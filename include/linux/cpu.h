@@ -197,10 +197,6 @@ static inline void cpu_smt_disable(bool force) { }
 static inline void cpu_smt_check_topology(void) { }
 #endif
 
-<<<<<<< HEAD
-extern bool cpu_mitigations_off(void);
-extern bool cpu_mitigations_auto_nosmt(void);
-=======
 /*
  * These are used for a global "mitigations=" cmdline option for toggling
  * optional CPU mitigations.
@@ -224,6 +220,5 @@ static inline bool cpu_mitigations_auto_nosmt(void)
 {
 	return cpu_mitigations == CPU_MITIGATIONS_AUTO_NOSMT;
 }
->>>>>>> c8c87353e (Merge 4.14.119 into android-4.14)
 
 #endif /* _LINUX_CPU_H_ */
